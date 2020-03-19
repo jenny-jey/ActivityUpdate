@@ -1,0 +1,28 @@
+﻿@model ActivityUpdate.Models.Litigation_Accounts
+@{
+    ViewBag.Title = "Home Page";
+}
+    <script type="text/javascript">
+$(function () {
+$("#btnLink").click(function(){
+window.location.href = "@Url.Action("LinkAccounts", "Litigation_AccountsController")";
+});
+});
+    </script>
+@using (Html.BeginForm("LinkAccounts", "Litigation_AccountsController"))
+{
+<div class="jumbotron">
+    <input type="button" name="btnLit" value="Link Litigation Accounts" class="btn btn-primary btn-lg"  onclick="@("window.location.href='" + @Url.Action("LinkAccounts", "Litigation_Accounts") + "'");" />
+</div>
+
+    <div class="jumbotron">
+        <p>
+            <button type="button" name="btnNooptions" class="=btn btn-primary btn-lg"> Insert No-options Date For PTSB</button>
+            @*onclick="location.href='@Url.Action("MyAction", "MyController")'"*@
+        </p>
+    </div>
+
+    <div class="jumbotron">
+        <p></p>
+    </div>
+}
